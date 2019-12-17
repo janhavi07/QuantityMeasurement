@@ -157,4 +157,12 @@ public class LengthTest {
         boolean compare = length.compare(length1);
         Assert.assertFalse(compare);
     }
+
+    @Test
+    public void given3FeetAnd1yard_ShouldReturnEqual() {
+        Length length1 = new Length(Length.Unit.FEET, 3.0);
+        Length length = new Length(Length.Unit.YARD, 1.0);
+        boolean compare = length1.compare(length);
+        Assert.assertTrue(compare);
+    }
 }
