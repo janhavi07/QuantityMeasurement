@@ -165,4 +165,12 @@ public class LengthTest {
         boolean compare = length1.compare(length);
         Assert.assertTrue(compare);
     }
+
+    @Test
+    public void given1FeetAnd1Yard_ShouldReturnNotEqual() {
+        Length length1 = new Length(Length.Unit.FEET, 1.0);
+        Length length = new Length(Length.Unit.YARD, 1.0);
+        boolean compare = length1.compare(length);
+        Assert.assertFalse(compare);
+    }
 }
