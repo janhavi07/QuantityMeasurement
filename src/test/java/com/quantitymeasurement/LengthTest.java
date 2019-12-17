@@ -95,4 +95,12 @@ public class LengthTest {
         boolean compare = length2.compare(length1);
         Assert.assertFalse(compare);
     }
+
+    @Test
+    public void given12FeetAnd1Inch_ShouldReturnNotEqual() {
+        Length length1 = new Length(Length.Unit.FEET, 12.0);
+        Length length2 = new Length(Length.Unit.INCH, 1.0);
+        boolean compare = length1.compare(length2);
+        Assert.assertFalse(compare);
+    }
 }
