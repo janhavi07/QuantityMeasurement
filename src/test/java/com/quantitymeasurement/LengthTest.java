@@ -118,4 +118,12 @@ public class LengthTest {
         Length length1 = new Length(Length.Unit.YARD, 0.0);
         Assert.assertEquals(length, length1);
     }
+
+    @Test
+    public void givenSameUnitType_ShouldReturnNotEqual() {
+        Length length2 = new Length(Length.Unit.INCH, 18.0);
+        Length length1 = new Length(Length.Unit.INCH, 1.5);
+        boolean compare = length2.compare(length1);
+        Assert.assertFalse(compare);
+    }
 }
