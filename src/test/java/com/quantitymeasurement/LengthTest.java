@@ -173,4 +173,13 @@ public class LengthTest {
         boolean compare = length1.compare(length);
         Assert.assertFalse(compare);
     }
+
+    @Test
+    public void given1InchAnd1Yard_ShouldReturnNotEqual() {
+        Length length1 = new Length(Length.Unit.INCH, 1.0);
+        Length length = new Length(Length.Unit.YARD, 1.0);
+        boolean compare = length1.compare(length);
+        Assert.assertFalse(compare);
+    }
+
 }

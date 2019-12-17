@@ -3,6 +3,7 @@ package com.quantitymeasurement;
 public class Length {
     private static final double FEET_INTO_INCH = 12.0;
     private static final double YARD_TO_FEET = 3.0;
+    private static final double YARD_TO_INCH = 36.0;
 
     public enum Unit {INCH, FEET, RANDOM, YARD}
 
@@ -29,6 +30,8 @@ public class Length {
             return Double.compare(this.value * YARD_TO_FEET, that.value) == 0;
         if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.YARD))
             return Double.compare(this.value, that.value * YARD_TO_FEET) == 0;
+        if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.YARD))
+            return Double.compare(this.value*YARD_TO_INCH, that.value) == 0;
         return false;
     }
 
