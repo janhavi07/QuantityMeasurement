@@ -126,4 +126,35 @@ public class LengthTest {
         boolean compare = length2.compare(length1);
         Assert.assertFalse(compare);
     }
+
+    @Test
+    public void given0YardAnd2Yard_ShouldReturnNotEqual() {
+        Length length = new Length(Length.Unit.YARD, 1.0);
+        Length length1 = new Length(Length.Unit.YARD, 2.0);
+        Assert.assertNotEquals(length, length1);
+    }
+
+    @Test
+    public void given1YardAnd1Yard_ShouldReturnEqual() {
+        Length length = new Length(Length.Unit.YARD, 1.0);
+        Length length1 = new Length(Length.Unit.YARD, 1.0);
+        boolean compare = length.compare(length1);
+        Assert.assertTrue(compare);
+    }
+
+    @Test
+    public void given1YardAnd3Feet_ShouldReturnEqual() {
+        Length length = new Length(Length.Unit.YARD, 1.0);
+        Length length1 = new Length(Length.Unit.FEET, 3.0);
+        boolean compare = length.compare(length1);
+        Assert.assertTrue(compare);
+    }
+
+    @Test
+    public void given3YardAnd1Feet_ShouldReturnNotEqual() {
+        Length length = new Length(Length.Unit.YARD, 3.0);
+        Length length1 = new Length(Length.Unit.FEET, 1.0);
+        boolean compare = length.compare(length1);
+        Assert.assertFalse(compare);
+    }
 }
