@@ -18,4 +18,18 @@ public class FeetTest {
         Feet feet1 = new Feet(0.0);
         Assert.assertNotEquals(feet, feet1);
     }
+
+    @Test
+    public void given0inchAnd0Inch_ShouldReturnEquals() {
+        Inch inch1 = new Inch(0);
+        Inch inch2 = new Inch(0);
+        Assert.assertEquals(inch1, inch2);
+    }
+
+    @Test
+    public void given0inchAnd2Inch_ShouldReturnNotEquals() {
+        Inch inch1 = new Inch(0);
+        Inch inch2 = new Inch(2);
+        Assert.assertNotEquals(inch1, inch2);
+    }
 }

@@ -1,10 +1,10 @@
 package com.quantitymeasurement;
 
-public class Feet {
 
-    private double value;
+public class Inch {
+    private final double value;
 
-    public Feet(Double value) {
+    public Inch(double value) {
         this.value=value;
     }
 
@@ -12,7 +12,8 @@ public class Feet {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Feet that = (Feet) o;
-        return Double.compare(that.value, value) == 0;
+        Inch inch = (Inch) o;
+        return Double.compare(inch.value, value) == 0;
     }
+
 }
