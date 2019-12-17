@@ -1,14 +1,24 @@
 package com.quantitymeasurement;
 
-public class Length {
+public class  Length {
+    private static final double FEET_INTO_INCH = 12.0;
 
-    public enum Unit{INCH,FEET}
+    public enum Unit {INCH, FEET}
+
     private double value;
     private final Unit unit;
 
     public Length(Unit unit, Double value) {
-        this.unit=unit;
-        this.value=value;
+        this.unit = unit;
+        this.value = value;
+    }
+
+    public boolean compare(Length that) {
+        if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.FEET))
+            return Double.compare(this.value, that.value) == 0;
+        if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
+            return Double.compare(this.value * FEET_INTO_INCH, that.value) == 0;
+        return false;
     }
 
     @Override
