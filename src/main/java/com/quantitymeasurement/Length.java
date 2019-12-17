@@ -31,7 +31,9 @@ public class Length {
         if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.YARD))
             return Double.compare(this.value, that.value * YARD_TO_FEET) == 0;
         if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.YARD))
-            return Double.compare(this.value*YARD_TO_INCH, that.value) == 0;
+            return Double.compare(this.value * YARD_TO_INCH, that.value) == 0;
+        if (this.unit.equals(Unit.YARD) && that.unit.equals(Unit.INCH))
+            return Double.compare(this.value * YARD_TO_INCH, that.value) == 0;
         return false;
     }
 
