@@ -60,7 +60,7 @@ public class LengthTest {
     public void given1FeetAnd1FeetShouldReturn_EqualLength() {
         Length length1 = new Length(Length.Unit.FEET, 1.0);
         Length length2 = new Length(Length.Unit.FEET, 1.0);
-        boolean compare=length1.compare(length2);
+        boolean compare = length1.compare(length2);
         Assert.assertTrue(compare);
     }
 
@@ -68,7 +68,7 @@ public class LengthTest {
     public void given1InchAnd1Inch_ShouldReturnEqual() {
         Length inch1 = new Length(Length.Unit.INCH, 0.1);
         Length inch2 = new Length(Length.Unit.INCH, 0.1);
-        boolean compare=inch1.compare(inch2);
+        boolean compare = inch1.compare(inch2);
         Assert.assertTrue(compare);
     }
 
@@ -110,5 +110,12 @@ public class LengthTest {
         Length length2 = new Length(Length.Unit.INCH, 1.0);
         boolean compare = length1.compare(length2);
         Assert.assertFalse(compare);
+    }
+
+    @Test
+    public void given0YardAnd0Yard_ShouldReturnTrue() {
+        Length length = new Length(Length.Unit.YARD, 0.0);
+        Length length1 = new Length(Length.Unit.YARD, 0.0);
+        Assert.assertEquals(length, length1);
     }
 }
