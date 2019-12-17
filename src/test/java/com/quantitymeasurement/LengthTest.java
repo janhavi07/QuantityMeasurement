@@ -103,4 +103,12 @@ public class LengthTest {
         boolean compare = length1.compare(length2);
         Assert.assertFalse(compare);
     }
+
+    @Test
+    public void givenRandomUnit_ShouldReturnNotEqual() {
+        Length length1 = new Length(Length.Unit.RANDOM, 12.0);
+        Length length2 = new Length(Length.Unit.INCH, 1.0);
+        boolean compare = length1.compare(length2);
+        Assert.assertFalse(compare);
+    }
 }

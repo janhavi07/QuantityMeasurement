@@ -4,7 +4,7 @@ public class  Length {
     private static final double FEET_INTO_INCH = 12.0;
     private static final double INCH_INTO_FEET = 0.0833;
 
-    public enum Unit {INCH, FEET}
+    public enum Unit {INCH, FEET, RANDOM}
 
     private double value;
     private final Unit unit;
