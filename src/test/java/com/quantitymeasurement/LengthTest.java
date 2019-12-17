@@ -13,6 +13,20 @@ public class LengthTest {
     }
 
     @Test
+    public void given36InchAnd1yard_WithDifferentClassObject_ShouldReturnNotEqual() {
+        Length length1 = new Length(Length.Unit.YARD, 1.0);
+        Inch inch = new Inch( 36.0);
+        Assert.assertNotEquals(length1, inch);
+    }
+
+    @Test
+    public void given0FeetAndNull_ShouldThrowException() {
+        new Length(Length.Unit.FEET, 0.0);
+        Assert.assertNotEquals(MeasurementException.ExceptionType.NULL_VALUE, null);
+    }
+
+
+    @Test
     public void given1FeetAnd2Feet_ShouldReturnNotEqual() {
         Length length = new Length(Length.Unit.FEET, 0.8);
         Length length1 = new Length(Length.Unit.FEET, 0.0);
@@ -197,5 +211,7 @@ public class LengthTest {
         boolean compare = length1.compare(length);
         Assert.assertTrue(compare);
     }
+
+
 
 }

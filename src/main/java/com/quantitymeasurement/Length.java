@@ -40,6 +40,12 @@ public class Length {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
+        if(this==null || o == null)
+            try {
+                throw new MeasurementException("No values",MeasurementException.ExceptionType.NULL_VALUE);
+            } catch (MeasurementException e) {
+                e.printStackTrace();
+            }
         if (o == null || getClass() != o.getClass()) return false;
         Length length = (Length) o;
         return Double.compare(length.value, value) == 0 &&
