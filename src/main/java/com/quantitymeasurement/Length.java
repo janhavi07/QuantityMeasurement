@@ -14,6 +14,10 @@ public class Length {
         return this.unit.compare(l1, l2);
     }
 
+    public double addTwoLength(Length length1, Length length) {
+        return this.unit.add(length1, length);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -29,7 +33,5 @@ public class Length {
                 unit == length.unit;
     }
 
-    public double addTwoLength(Length length1, Length length) {
-        return this.unit.add(length1, length);
-    }
+
 }
