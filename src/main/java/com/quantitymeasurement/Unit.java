@@ -1,7 +1,7 @@
 package com.quantitymeasurement;
 
 public enum Unit {
-    FEET(12.0),INCH(1.0),YARD(36.0),RANDOM(0);
+    FEET(12.0),INCH(1.0),YARD(36.0),RANDOM(0),CENTIMETERS(2.54);
 
     private final double conversionFactor;
 

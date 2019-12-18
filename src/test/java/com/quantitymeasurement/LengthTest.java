@@ -212,4 +212,11 @@ public class LengthTest {
         Assert.assertTrue(compare);
     }
 
+    @Test
+    public void given0CentimeterAnd0centimeter_ShouldReturnEquals() {
+        Length length1 = new Length(Unit.CENTIMETERS, 0.0);
+        Length length = new Length(Unit.CENTIMETERS, 0.0);
+        boolean compare = length1.compare(length1,length);
+        Assert.assertTrue(compare);
+    }
 }

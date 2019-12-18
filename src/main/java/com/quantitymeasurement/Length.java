@@ -1,10 +1,6 @@
 package com.quantitymeasurement;
 
 public class Length {
-//    private static final double FEET_INTO_INCH = 12.0;
-//    private static final double YARD_TO_FEET = 3.0;
-//    private static final double YARD_TO_INCH = 36.0;
-
 
     public double value;
     public final Unit unit;
