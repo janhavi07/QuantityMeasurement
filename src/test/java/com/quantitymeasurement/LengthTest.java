@@ -252,4 +252,12 @@ public class LengthTest {
         double add = length1.addTwoLength(length1, length);
         Assert.assertEquals(24, add, 0.0);
     }
+
+    @Test
+    public void given2InchAnd2point5Centimeters_ShouldReturn3Inch() {
+        Length length1 = new Length(Unit.INCH, 2.0);
+        Length length = new Length(Unit.CENTIMETERS, 2.54);
+        double add = length1.addTwoLength(length1, length);
+        Assert.assertEquals(3, add, 0.0);
+    }
 }
