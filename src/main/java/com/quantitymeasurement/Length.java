@@ -10,8 +10,8 @@ public class Length {
         this.value = value;
     }
 
-    public boolean compare(Length l1,Length l2) {
-       return this.unit.compare(l1,l2);
+    public boolean compare(Length l1, Length l2) {
+        return this.unit.compare(l1, l2);
     }
 
     @Override
@@ -27,5 +27,9 @@ public class Length {
         Length length = (Length) o;
         return Double.compare(length.value, value) == 0 &&
                 unit == length.unit;
+    }
+
+    public double addTwoLength(Length length1, Length length) {
+        return this.unit.add(length1, length);
     }
 }
