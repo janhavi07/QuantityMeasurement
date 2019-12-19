@@ -4,7 +4,9 @@ import java.text.DecimalFormat;
 
 public enum Unit {
     FEET(30.48), INCH(2.54), YARD(91.44), RANDOM(0), CENTIMETERS(1.0),
-    GALLON(3785.41), LITER(1000.0), MILLI_LITRE(1);
+    GALLON(3785.41), LITER(1000.0), MILLI_LITRE(1),
+    KILOGRAM(1000),GRAMS(1.0),TONNES(1000000);
+
 
     private final double unitConversion;
     DecimalFormat f = new DecimalFormat("##.00");
@@ -22,3 +24,4 @@ public enum Unit {
         return Double.parseDouble(f.format(value));
     }
 }
+
