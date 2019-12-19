@@ -7,7 +7,6 @@ public enum Unit {
     GALLON(3785.41), LITER(1000.0), MILLI_LITRE(1);
 
     private final double unitConversion;
-    public double DIVISION_FACTOR =2.54;
     DecimalFormat f = new DecimalFormat("##.00");
 
     Unit(double unitConversion) {
@@ -18,8 +17,8 @@ public enum Unit {
         return Double.compare(Double.parseDouble(f.format(l1.value * l1.unit.unitConversion)), Double.parseDouble(f.format(l2.value * l2.unit.unitConversion))) == 0;
     }
 
-    public double add(Length l1, Length l2) {
-        double value = ((l1.value * l1.unit.unitConversion) + (l2.value * l2.unit.unitConversion))/ DIVISION_FACTOR;
+    public double add(Length l1, Length l2, Unit baseValue) {
+        double value = ((l1.value * l1.unit.unitConversion) + (l2.value * l2.unit.unitConversion)) / baseValue.unitConversion;
         return Double.parseDouble(f.format(value));
     }
 }

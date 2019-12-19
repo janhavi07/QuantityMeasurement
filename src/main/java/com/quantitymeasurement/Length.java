@@ -14,8 +14,8 @@ public class Length {
         return this.unit.compare(l1, l2);
     }
 
-    public double addTwoLength(Length length1, Length length) {
-        return this.unit.add(length1, length);
+    public double addTwoLength(Length length1, Length length, Unit baseValue) {
+        return this.unit.add(length1, length, baseValue);
     }
 
     @Override

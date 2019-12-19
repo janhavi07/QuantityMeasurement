@@ -233,7 +233,7 @@ public class LengthTest {
     public void given2InchAnd2Inch_ShouldReturn4Inch() {
         Length length1 = new Length(Unit.INCH, 2.0);
         Length length = new Length(Unit.INCH, 2.0);
-        double add = length1.addTwoLength(length1, length);
+        double add = length1.addTwoLength(length1, length, Unit.INCH);
         Assert.assertEquals(4, add, 0.0);
     }
 
@@ -241,7 +241,7 @@ public class LengthTest {
     public void given1FeetAnd2Inch_ShouldReturn14Inch() {
         Length length1 = new Length(Unit.FEET, 1.0);
         Length length = new Length(Unit.INCH, 2.0);
-        double add = length1.addTwoLength(length1, length);
+        double add = length1.addTwoLength(length1, length, Unit.INCH);
         Assert.assertEquals(14, add, 0.0);
     }
 
@@ -249,7 +249,7 @@ public class LengthTest {
     public void given1FeetAnd1Feet_ShouldReturn24Inch() {
         Length length1 = new Length(Unit.FEET, 1.0);
         Length length = new Length(Unit.FEET, 1.0);
-        double add = length1.addTwoLength(length1, length);
+        double add = length1.addTwoLength(length1, length, Unit.INCH);
         Assert.assertEquals(24, add, 0.0);
     }
 
@@ -257,7 +257,7 @@ public class LengthTest {
     public void given2InchAnd2point5Centimeters_ShouldReturn3Inch() {
         Length length1 = new Length(Unit.INCH, 2.0);
         Length length = new Length(Unit.CENTIMETERS, 2.54);
-        double add = length1.addTwoLength(length1, length);
+        double add = length1.addTwoLength(length1, length, Unit.INCH);
         Assert.assertEquals(3, add, 0.0);
     }
 }
