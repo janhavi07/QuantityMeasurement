@@ -30,7 +30,17 @@ public enum UnitConverter {;
         WEIGHT(double unitConversion) {
             this.unitConversion = unitConversion;
         }
+    }
 
+    enum TEMPERATURE{
+        CELSIUS(1.0),FAHRENHEIT(1.0);
+
+        public final double unitConversion;
+
+        TEMPERATURE(double unitConversion ) {
+            this.unitConversion = unitConversion;
+
+        }
     }
 }
 

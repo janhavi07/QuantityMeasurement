@@ -4,6 +4,8 @@ import java.util.Objects;
 
 public class Quantity {
 
+    public UnitConverter.TEMPERATURE temperature;
+    public UnitConverter.WEIGHT weight;
     public double unit;
     public UnitConverter.LENGTH length;
     public UnitConverter.VOLUME volume;
@@ -23,18 +25,23 @@ public class Quantity {
         this.unit = volume.unitConversion;
     }
 
+    public Quantity(UnitConverter.WEIGHT weight, double value) {
+        this.weight = weight;
+        this.value = value;
+        this.unit = weight.unitConversion;
+    }
 
-//
-//    public Length(UnitConverter unitConverter, Double value) {
-//        this.unitConverter = unitConverter;
-//        this.value = value;
-//    }
+    public Quantity(UnitConverter.TEMPERATURE temperature, double value) {
+        this.temperature = temperature;
+        this.value = value;
+        this.unit = temperature.unitConversion;
+    }
 
     public boolean compare(Quantity l1, Quantity l2) {
         return measurement.compare(l1, l2);
     }
 
-    public double addTwoLength(Quantity length1, Quantity length, UnitConverter.LENGTH baseValue) {
+    public double addTwoLength(Quantity length1, Quantity length, double baseValue) {
         return measurement.add(length1, length, baseValue);
     }
 

@@ -9,8 +9,8 @@ public class Measurement {
                 Double.parseDouble(f.format(l2.value * l2.unit))) == 0;
     }
 
-    public double add(Quantity l1, Quantity l2, UnitConverter.LENGTH baseValue) {
-        double value = ((l1.value * l1.unit) + (l2.value * l2.unit)) / baseValue.unitConversion;
+    public double add(Quantity l1, Quantity l2, double baseValue) {
+        double value = ((l1.value * l1.unit) + (l2.value * l2.unit)) / baseValue;
         return Double.parseDouble(f.format(value));
     }
 }

@@ -3,7 +3,7 @@ package com.quantitymeasurement;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class QuantityTest {
+public class LengthTest {
 
     @Test
     public void given0FeetAnd0Feet_ShouldReturnTrue() {
@@ -233,31 +233,32 @@ public class QuantityTest {
     public void given2InchAnd2Inch_ShouldReturn4Inch() {
         Quantity Quantity1 = new Quantity(UnitConverter.LENGTH.INCH, 2.0);
         Quantity Quantity = new Quantity(UnitConverter.LENGTH.INCH, 2.0);
-        double add = Quantity1.addTwoLength(Quantity1, Quantity, UnitConverter.LENGTH.INCH);
+        double val = UnitConverter.LENGTH.INCH.unitConversion;
+        double add = Quantity1.addTwoLength(Quantity1, Quantity, val);
         Assert.assertEquals(4, add, 0.0);
     }
 
-//    @Test
-//    public void given1FeetAnd2Inch_ShouldReturn14Inch() {
-//        Quantity Quantity1 = new Quantity(UnitConverter.LENGTH.FEET, 1.0);
-//        Quantity Quantity = new Quantity(UnitConverter.LENGTH.INCH, 2.0);
-//        double add = Quantity1.addTwoQuantity(Quantity1, Quantity, UnitConverter.LENGTH.INCH);
-//        Assert.assertEquals(14, add, 0.0);
-//    }
-//
-//    @Test
-//    public void given1FeetAnd1Feet_ShouldReturn24Inch() {
-//        Quantity Quantity1 = new Quantity(UnitConverter.LENGTH.FEET, 1.0);
-//        Quantity Quantity = new Quantity(UnitConverter.LENGTH.FEET, 1.0);
-//        double add = Quantity1.addTwoQuantity(Quantity1, Quantity, UnitConverter.LENGTH.INCH);
-//        Assert.assertEquals(24, add, 0.0);
-//    }
-//
-//    @Test
-//    public void given2InchAnd2point5Centimeters_ShouldReturn3Inch() {
-//        Quantity Quantity1 = new Quantity(UnitConverter.LENGTH.INCH, 2.0);
-//        Quantity Quantity = new Quantity(UnitConverter.LENGTH.CENTIMETERS, 2.54);
-//        double add = Quantity1.addTwoQuantity(Quantity1, Quantity, UnitConverter.LENGTH.INCH);
-//        Assert.assertEquals(3, add, 0.0);
-//    }
+    @Test
+    public void given1FeetAnd2Inch_ShouldReturn14Inch() {
+        Quantity Quantity1 = new Quantity(UnitConverter.LENGTH.FEET, 1.0);
+        Quantity Quantity = new Quantity(UnitConverter.LENGTH.INCH, 2.0);
+        double add = Quantity1.addTwoLength(Quantity1, Quantity, UnitConverter.LENGTH.INCH.unitConversion);
+        Assert.assertEquals(14, add, 0.0);
+    }
+
+    @Test
+    public void given1FeetAnd1Feet_ShouldReturn24Inch() {
+        Quantity Quantity1 = new Quantity(UnitConverter.LENGTH.FEET, 1.0);
+        Quantity Quantity = new Quantity(UnitConverter.LENGTH.FEET, 1.0);
+        double add = Quantity1.addTwoLength(Quantity1, Quantity, UnitConverter.LENGTH.INCH.unitConversion);
+        Assert.assertEquals(24, add, 0.0);
+    }
+
+    @Test
+    public void given2InchAnd2point5Centimeters_ShouldReturn3Inch() {
+        Quantity Quantity1 = new Quantity(UnitConverter.LENGTH.INCH, 2.0);
+        Quantity Quantity = new Quantity(UnitConverter.LENGTH.CENTIMETERS, 2.54);
+        double add = Quantity1.addTwoLength(Quantity1, Quantity, UnitConverter.LENGTH.INCH.unitConversion);
+        Assert.assertEquals(3, add, 0.0);
+    }
 }
