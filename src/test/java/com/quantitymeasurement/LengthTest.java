@@ -13,18 +13,10 @@ public class LengthTest {
     }
 
     @Test
-    public void given36InchAnd1yard_WithDifferentClassObject_ShouldReturnNotEqual() {
-        Quantity Quantity1 = new Quantity(UnitConverter.LENGTH.YARD, 1.0);
-        Inch inch = new Inch(36.0);
-        Assert.assertNotEquals(Quantity1, inch);
-    }
-
-    @Test
     public void given0FeetAndNull_ShouldThrowException() {
         new Quantity(UnitConverter.LENGTH.FEET, 0.0);
         Assert.assertNotEquals(MeasurementException.ExceptionType.NULL_VALUE, null);
     }
-
 
     @Test
     public void given1FeetAnd2Feet_ShouldReturnNotEqual() {

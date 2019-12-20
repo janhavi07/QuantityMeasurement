@@ -25,6 +25,6 @@ public class WeightTest {
         Quantity Quantity1 = new Quantity(UnitConverter.WEIGHT.TONNES, 1.0);
         Quantity Quantity = new Quantity(UnitConverter.WEIGHT.GRAMS, 1000.0);
         double value = Quantity.addTwoLength(Quantity1, Quantity, UnitConverter.WEIGHT.KILOGRAM.unitConversion);
-        Assert.assertEquals(1001.0,value,0.0);
+        Assert.assertEquals(1001.0, value, 0.0);
     }
 }
