@@ -33,14 +33,14 @@ public enum UnitConverter {;
     }
 
     enum TEMPERATURE{
-        CELSIUS(1.0),FAHRENHEIT(1.0);
+        CELSIUS,FAHRENHEIT;
 
-        public final double unitConversion;
-
-        TEMPERATURE(double unitConversion ) {
-            this.unitConversion = unitConversion;
-
-        }
+//        public final double unitConversion;
+//
+//        TEMPERATURE(double unitConversion ) {
+//            this.unitConversion = unitConversion;
+//
+//        }
     }
 }
 

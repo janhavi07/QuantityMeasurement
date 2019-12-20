@@ -27,4 +27,28 @@ public class Temperature {
         boolean add = Quantity1.compare(Quantity1, Quantity);
         Assert.assertTrue(add);
     }
+
+    @Test
+    public void given100CAnd212Fahrenheit_ShouldReturnEqual() {
+        Quantity Quantity1 = new Quantity(UnitConverter.TEMPERATURE.CELSIUS,100.0);
+        Quantity Quantity = new Quantity(UnitConverter.TEMPERATURE.FAHRENHEIT, 212.0);
+        boolean add = Quantity1.compare(Quantity1, Quantity);
+        Assert.assertTrue(add);
+    }
+
+    @Test
+    public void given200CAnd392Fahrenheit_ShouldReturnEqual() {
+        Quantity Quantity1 = new Quantity(UnitConverter.TEMPERATURE.CELSIUS,100.0);
+        Quantity Quantity = new Quantity(UnitConverter.TEMPERATURE.FAHRENHEIT, 212.0);
+        boolean add = Quantity1.compare(Quantity1, Quantity);
+        Assert.assertTrue(add);
+    }
+
+    @Test
+    public void given200CAnd391Fahrenheit_ShouldReturnNotEqual() {
+        Quantity Quantity1 = new Quantity(UnitConverter.TEMPERATURE.CELSIUS,200.0);
+        Quantity Quantity = new Quantity(UnitConverter.TEMPERATURE.FAHRENHEIT, 391.0);
+        boolean add = Quantity1.compare(Quantity1, Quantity);
+        Assert.assertFalse(add);
+    }
 }

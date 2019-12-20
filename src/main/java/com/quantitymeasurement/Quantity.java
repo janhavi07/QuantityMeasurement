@@ -34,7 +34,10 @@ public class Quantity {
     public Quantity(UnitConverter.TEMPERATURE temperature, double value) {
         this.temperature = temperature;
         this.value = value;
-        this.unit = temperature.unitConversion;
+        if (temperature.equals(UnitConverter.TEMPERATURE.CELSIUS))
+            this.unit = 1.8 * value + 32;
+        if (temperature.equals(UnitConverter.TEMPERATURE.FAHRENHEIT))
+            this.unit = (value - 32) * 5 / 9;
     }
 
     public boolean compare(Quantity l1, Quantity l2) {
