@@ -27,4 +27,20 @@ public class WeightTest {
         double value = Quantity.addTwoLength(Quantity1, Quantity, UnitConverter.WEIGHT.KILOGRAM.unitConversion);
         Assert.assertEquals(1001.0, value, 0.0);
     }
+
+    @Test
+    public void given1KelvinAnd1000Grams_ShouldReturn1001kg() {
+        Quantity Quantity1 = new Quantity(UnitConverter.TEMPERATURE.CELSIUS, 1.0);
+        Quantity Quantity = new Quantity(UnitConverter.WEIGHT.GRAMS, 1000.0);
+        double value = Quantity.addTwoLength(Quantity1, Quantity, UnitConverter.WEIGHT.KILOGRAM.unitConversion);
+        Assert.assertNotEquals(1001.0, value, 0.0);
+    }
+
+    @Test
+    public void given1kgAnd1Celsius_ShouldReturnFalse() {
+        Quantity Quantity1 = new Quantity(UnitConverter.TEMPERATURE.CELSIUS, 1.0);
+        Quantity Quantity = new Quantity(UnitConverter.WEIGHT.KILOGRAM, 1.0);
+        double value = Quantity.addTwoLength(Quantity1, Quantity, UnitConverter.WEIGHT.GRAMS.unitConversion);
+        Assert.assertNotEquals(2, value);
+    }
 }

@@ -1,7 +1,5 @@
 package com.quantitymeasurement;
 
-import java.util.Objects;
-
 public class Quantity {
 
     public UnitConverter.TEMPERATURE temperature;
@@ -41,7 +39,7 @@ public class Quantity {
     }
 
     public boolean compare(Quantity l1, Quantity l2) {
-        return measurement.compare(l1, l2);
+        return l1.equals(l2);
     }
 
     public double addTwoLength(Quantity length1, Quantity length, double baseValue) {
@@ -53,10 +51,12 @@ public class Quantity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Quantity quantity = (Quantity) o;
-        return Double.compare(quantity.unit, unit) == 0 &&
+        return (Double.compare(quantity.unit, unit) == 0 &&
                 Double.compare(quantity.value, value) == 0 &&
-                length == quantity.length ||
-                volume == quantity.volume &&
-                        Objects.equals(measurement, quantity.measurement);
+                temperature == quantity.temperature &&
+                weight == quantity.weight &&
+                length == quantity.length &&
+                volume == quantity.volume) ||
+                measurement.compare(this, quantity);
     }
 }

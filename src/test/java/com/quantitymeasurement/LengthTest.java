@@ -13,12 +13,6 @@ public class LengthTest {
     }
 
     @Test
-    public void given0FeetAndNull_ShouldThrowException() {
-        new Quantity(UnitConverter.LENGTH.FEET, 0.0);
-        Assert.assertNotEquals(MeasurementException.ExceptionType.NULL_VALUE, null);
-    }
-
-    @Test
     public void given1FeetAnd2Feet_ShouldReturnNotEqual() {
         Quantity Quantity = new Quantity(UnitConverter.LENGTH.FEET, 0.8);
         Quantity Quantity1 = new Quantity(UnitConverter.LENGTH.FEET, 0.0);
@@ -87,11 +81,19 @@ public class LengthTest {
     }
 
     @Test
+    public void given0FeetAnd0ml_ShouldReturnNotEqual() {
+        Quantity Quantity1 = new Quantity(UnitConverter.LENGTH.INCH, 1.0);
+        Quantity Quantity2 = new Quantity(UnitConverter.VOLUME.MILLI_LITRE, 3.0);
+        boolean compare = Quantity1.compare(Quantity1, Quantity2);
+        Assert.assertFalse(compare);
+    }
+
+    @Test
     public void given12InchAnd1Feet_ShouldReturnEqual() {
         Quantity Quantity1 = new Quantity(UnitConverter.LENGTH.FEET, 1.5);
-        Quantity Quantity2 = new Quantity(UnitConverter.LENGTH.INCH, 18.0);
+        Quantity Quantity2 = new Quantity(UnitConverter.WEIGHT.KILOGRAM, 18.0);
         boolean compare = Quantity2.compare(Quantity1, Quantity2);
-        Assert.assertTrue(compare);
+        Assert.assertFalse(compare);
     }
 
     @Test

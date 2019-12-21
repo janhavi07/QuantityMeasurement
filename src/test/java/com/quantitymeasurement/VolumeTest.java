@@ -59,4 +59,12 @@ public class VolumeTest {
         double add = Quantity1.addTwoLength(Quantity1, Quantity, UnitConverter.VOLUME.LITER.unitConversion);
         Assert.assertEquals(2, add, 0.0);
     }
+
+    @Test
+    public void given1LAnd2KG_ShouldReturnNotEquals() {
+        Quantity Quantity1 = new Quantity(UnitConverter.VOLUME.LITER, 1.0);
+        Quantity Quantity = new Quantity(UnitConverter.WEIGHT.KILOGRAM, 100.0);
+        boolean add = Quantity1.compare(Quantity1, Quantity);
+        Assert.assertFalse(add);
+    }
 }
